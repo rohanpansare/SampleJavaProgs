@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>reverse.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(0,0,255); }
+.s4 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+reverse.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">AkunaCapital; 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.*; 
+</span><span class="s2">/** 
+ * Created by Rohan Pansare on 2/13/2016. 
+ */</span><span class="s1"> 
+</span><span class="s0">public class </span><span class="s1">reverse { 
+    </span><span class="s0">public static void </span><span class="s1">main(String[] args) { 
+        Scanner sc = </span><span class="s0">new </span><span class="s1">Scanner(System.in); 
+        </span><span class="s0">int </span><span class="s1">num=sc.nextInt(); 
+        </span><span class="s0">int</span><span class="s1">[] arr =</span><span class="s0">new int</span><span class="s1">[num]; 
+        </span><span class="s0">int </span><span class="s1">i=</span><span class="s3">0</span><span class="s1">; 
+        </span><span class="s0">int </span><span class="s1">largest=Integer.MIN_VALUE,secondLargest=Integer.MIN_VALUE; 
+        System.out.println(</span><span class="s4">&quot;Enter array elements: &quot;</span><span class="s1">); 
+        </span><span class="s0">while</span><span class="s1">(i!=num ){ 
+            arr[i]=sc.nextInt(); 
+            i++; 
+        } 
+        i=</span><span class="s3">0</span><span class="s1">; 
+        TreeSet&lt;Integer&gt; result = </span><span class="s0">new </span><span class="s1">TreeSet&lt;&gt;(); 
+ 
+        </span><span class="s0">while</span><span class="s1">(i!=num ){ 
+            </span><span class="s0">if</span><span class="s1">(!result.contains(arr[i])){ 
+                result.add(arr[i]); 
+ 
+            } 
+            i++; 
+        } 
+ 
+        i=</span><span class="s3">0</span><span class="s1">; 
+        </span><span class="s0">int </span><span class="s1">size = result.size(); 
+        </span><span class="s0">int</span><span class="s1">[] arr1=</span><span class="s0">new int</span><span class="s1">[result.size()]; 
+        </span><span class="s0">while</span><span class="s1">(i&lt;size){ 
+            arr1[i]=result.pollLast(); 
+            i++; 
+        } 
+ 
+    } 
+} 
+    </span><span class="s0">static </span><span class="s1">String IntersectStrings(String first, String second) { 
+        String s1 = first; 
+        String s2 = second; 
+ 
+        </span><span class="s0">char</span><span class="s1">[] s1Array = s1.toCharArray(); 
+        </span><span class="s0">char </span><span class="s1">[] s2Array = s2.toCharArray(); 
+ 
+ 
+        Set&lt;Character&gt;s1CharSet = </span><span class="s0">new </span><span class="s1">HashSet&lt;Character&gt;(); 
+        Set&lt;Character&gt;s2CharSet = </span><span class="s0">new </span><span class="s1">HashSet&lt;Character&gt;(); 
+ 
+        </span><span class="s0">for</span><span class="s1">(</span><span class="s0">char </span><span class="s1">c:s1Array){ 
+            s1CharSet.add(c); 
+        } 
+ 
+        </span><span class="s0">for</span><span class="s1">(</span><span class="s0">char </span><span class="s1">c: s2Array){ 
+            s2CharSet.add(c); 
+        } 
+ 
+        s1CharSet.retainAll(s2CharSet); 
+        String res=</span><span class="s4">&quot;&quot;</span><span class="s1">; 
+        </span><span class="s0">for</span><span class="s1">(</span><span class="s0">char </span><span class="s1">c: s1Array){ 
+            res=res+c; 
+        } 
+ 
+        </span><span class="s0">if</span><span class="s1">(s1CharSet.size()==</span><span class="s3">0</span><span class="s1">){ 
+            </span><span class="s0">return </span><span class="s4">&quot;&quot;</span><span class="s1">; 
+        } 
+ 
+        </span><span class="s0">else</span><span class="s1">{ 
+            </span><span class="s0">return </span><span class="s1">res; 
+        } 
+ 
+    }</span></pre>
+</body>
+</html>
